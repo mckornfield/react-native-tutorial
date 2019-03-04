@@ -6,3 +6,9 @@ For Mac OSX, install the following
 * Node (brew install node)
 * watchman (brew install watchman)
 * React Native CLI (npm install -g react-native-cli)
+
+For Windows, install the following
+* Java
+* Node
+* Python 2
+* Android Studio
