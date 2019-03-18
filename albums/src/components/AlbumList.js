@@ -1,6 +1,6 @@
 // import libraries for making a component
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import data from './music_albums';
 import AlbumDetail from './AlbumDetail';
 
@@ -24,7 +24,7 @@ class AlbumList extends Component {
     render() {
         console.log(this.state);
         return (
-            <View>{this.renderAlbums()}</View>
+            <ScrollView>{this.renderAlbums()}</ScrollView>
         );
     }
 }
