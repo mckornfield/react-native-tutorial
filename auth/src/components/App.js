@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import config from './config';
 import { Header } from './common';
 import firebase from 'firebase';
+import LoginForm from './LoginForm';
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
     return (
       <View>
         <Header headerText="Authentication"></Header>
-        <Text>A SINGLE APP!</Text>
+        <LoginForm />
       </View>
     )
   }
