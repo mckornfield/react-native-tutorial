@@ -6,7 +6,7 @@ const Button = ({ onPress, children }) => {
     return (
         <TouchableOpacity onPress={onPress} style={buttonStyle}>
             <Text style={textStyle} >
-              {children}
+                {children}
             </Text>
         </TouchableOpacity>
     );
@@ -33,4 +33,4 @@ const styles = {
         marginRight: 5,
     }
 };
-export default Button;
+export { Button };
