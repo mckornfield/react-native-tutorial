@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Keyboard, Text, TouchableOpacity } from 'react-native';
 
 const Button = ({ onPress, children }) => {
     const { buttonStyle, textStyle } = styles;
     return (
-        <TouchableOpacity onPress={onPress} style={buttonStyle}>
+        <TouchableOpacity onPress={() => { Keyboard.dismiss(); onPress(); }} style={buttonStyle}>
             <Text style={textStyle} >
                 {children}
             </Text>

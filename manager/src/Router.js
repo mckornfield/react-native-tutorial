@@ -1,30 +1,35 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Scene, Router } from 'react-native-router-flux';
+import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
+import EmployeeCreate from './components/EmployeeCreate';
 
 const RouterComponent = () => {
     return (
-        <Router >
+        <Router sceneStyle={styles.sceneStyle}>
             <Scene key="root" hideNavBar>
                 <Scene key="auth">
                     <Scene
                         key="login"
                         component={LoginForm}
-                        sceneStyle={styles.sceneStyle}
                         title="Please Login"
                         initial
                     />
                 </Scene>
                 <Scene key="main">
                     <Scene
+                        rightTitle="Add"
+                        onRight={() => Actions.employeeDetail()}
                         key="employeeList"
                         component={EmployeeList}
-                        sceneStyle={styles.sceneStyle}
                         title="Employees"
                     />
-                    <Scene key="employeeDetail" />
+                    <Scene
+                        key="employeeDetail"
+                        component={EmployeeCreate}
+                        title="Create Employee"
+                    />
                 </Scene>
             </Scene>
         </Router>
