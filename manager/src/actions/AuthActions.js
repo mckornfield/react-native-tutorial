@@ -5,7 +5,7 @@ import {
     LOGIN_USER_SUCCESS, PASSWORD_CHANGED, LOGIN_USER_START
 } from './types';
 
-const stub = true;
+const stub = false;
 
 export const emailChanged = (text) => {
     return {
