@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import {
     EMPLOYEE_CREATE,
+    EMPLOYEE_DELETE_SUCCESS,
     EMPLOYEES_FETCH_SUCCESS,
     EMPLOYEE_SAVE_SUCCESS,
     EMPLOYEE_UPDATE
@@ -41,6 +42,17 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
             .set({ name, phone, shift })
             .then(() => {
                 dispatch({ type: EMPLOYEE_SAVE_SUCCESS });
+                Actions.pop();
+            });
+    };
+};
+
+export const employeeDelete = ({ uid }) => {
+    return (dispatch) => {
+        firebase.database().ref(`${getRef()}/${uid}`)
+            .remove()
+            .then(() => {
+                dispatch({ type: EMPLOYEE_DELETE_SUCCESS });
                 Actions.pop();
             });
     };
